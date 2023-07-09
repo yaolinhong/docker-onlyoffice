@@ -4,6 +4,9 @@
 
 环境 win10 wsl2 ubuntu 18.04
 
+
+
+
 ### 快速使用
 
 - docker镜像跑document server
@@ -27,7 +30,7 @@ pnpm run dev
 pnpm run build
 ```
 - dorker容器内 private IP 无法解析的问题
-<img src="./static/解决private IP 无法解析.png"></img>
+<img src="https://github.com/yaolinhong/docker-onlyoffice/blob/docker-onlyoffice/onlyoffice-server/static/%E8%A7%A3%E5%86%B3private%20IP%20%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90.png?raw=true"></img>
 ```
 <!-- 进入容器中修改 -->
 <!-- docker exec -it ce76c1f824dc bash -->
@@ -43,8 +46,9 @@ pnpm run build
 <!-- nano ctrl+o ctrl+x保存 -->
 <!-- exit docker restart  -->
 <!-- https://github.com/ONLYOFFICE/DocumentServer/issues/2268#issuecomment-1591159946 -->
+```
+- [参考项目](https://github.com/wytxer/demo-onlyoffice.git)
 
 ## License
 
-[参考项目](https://github.com/wytxer/demo-onlyoffice.git)
 [MIT](/LICENSE)
