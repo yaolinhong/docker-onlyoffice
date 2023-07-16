@@ -42,7 +42,7 @@ export class DocumentService {
     editorConfig.editorConfig.user = {
       group: '技术部',
       id: 'wytxer',
-      name: '程序员未央',
+      name: 'yao',
     };
     // 添加插件配置
     if (query.usePlugin === 'y') {
@@ -84,7 +84,7 @@ export class DocumentService {
     editorConfig.editorConfig.user = {
       group: '技术部',
       id: 'wytxer',
-      name: '程序员未央',
+      name: 'yao',
     };
     // 加密编辑器参数
     if (query.useJwtEncrypt === 'y') {

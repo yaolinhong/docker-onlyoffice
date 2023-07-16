@@ -42,7 +42,7 @@ const editorConfig = {
     lang: 'zh-CN',
     // 添加用户信息
     user: {
-      group: '技术部', id: 'wytxer', name: '程序员未央'
+      group: '技术部', id: 'wytxer', name: 'yao'
     },
     // 模板列表
     templates: [],

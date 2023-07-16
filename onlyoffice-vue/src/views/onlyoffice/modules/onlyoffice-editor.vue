@@ -66,7 +66,7 @@ export default {
           // 权限
           permissions: {
             // 启用评论
-            comment: false,
+            comment: true,
             // 启用下载
             download: true,
             // 启用编辑
@@ -78,18 +78,30 @@ export default {
           }
         },
         editorConfig: {
+
           // 回调地址
           callbackUrl: process.env.VUE_APP_ONLYOFFICE_CALLBACK,
           // 设置语言
           lang: 'zh-CN',
           // customization 字段相关配置详解：https://api.onlyoffice.com/editors/config/editor/customization
           customization: {
+            logo: {
+              image: 'yourImage',
+              imageDark: 'yourImage',
+              url: 'yourUrl'
+            },
+            compactToolbar: true, // 紧凑
             // 强制保存
             forcesave: true,
             features: {
               // 关闭拼写检查
               spellcheck: false
-            }
+            },
+            hideNotes: true,
+            hideRightMenu: true,
+            hideRulers: true,
+            plugins: false,
+            toolbarNoTabs: true
           }
         }
       },

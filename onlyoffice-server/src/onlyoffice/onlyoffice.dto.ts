@@ -30,7 +30,7 @@ export class IUser {
 
   /**
    * 用户名，里面包含了组织信息和用户名
-   * @example 技术部 程序员未央
+   * @example 技术部 yao
    */
   @IsString()
   name?: string;

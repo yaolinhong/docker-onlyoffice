@@ -9,12 +9,10 @@
 
 ### 快速使用
 
-- docker镜像跑document server
+- 使用根目录docker-compose起镜像
 
 ```
-
-docker run -i -t -d -p 8071:80 -p 443:443 -v /app/onlyoffice/Data:/var/www/onlyoffice/Data -v /app/onlyoffice/logs:/var/log/onlyoffice -e JWT_ENABLED=true -e JWT_SECRET=123456  --restart=always onlyoffice/documentserver-de
-
+docker-compose up -d
 ```
 
 - 项目安装依赖
