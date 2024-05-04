@@ -17,7 +17,12 @@ module.exports = {
       }
     }
   },
+  lintOnSave:false, //关闭eslint检查
   devServer: {
+    overlay: {
+      warnings: false, //不显示警告
+      errors: false	//不显示错误
+    },
     port: process.env.VUE_APP_PORT,
     proxy: {
       [apiPrefix]: {
@@ -27,7 +32,7 @@ module.exports = {
         logLevel: 'debug'
       },
       [onlyofficeApiPrefix]: {
-        target: 'http://172.27.125.150:8071',
+        target: 'http://127.0.0.1:8071',
         ws: false,
         changeOrigin: true,
         pathRewrite: {

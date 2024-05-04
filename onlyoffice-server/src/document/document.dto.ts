@@ -28,6 +28,16 @@ export class DocumentForceSaveDto {
  * 获取文档信息请求参数
  */
 export class DocumentInfoDto {
+
+  /**
+ * 完整Url
+ * @example test1.docx
+ */
+  @IsNotEmpty()
+  @IsString()
+  fullUrl: string;
+
+
   /**
    * 文档标识符（为了获取本地缓存的文档文件）
    * @example test1.docx

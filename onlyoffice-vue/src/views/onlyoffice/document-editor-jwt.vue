@@ -11,7 +11,7 @@ import OnlyofficeEditor from './modules/onlyoffice-editor'
 import { queryDocumentInfo, forceSaveDocumentInfo } from '@/api/onlyoffice'
 
 export default {
-  data () {
+  data() {
     return {
       loading: {
         editor: false,
@@ -19,20 +19,22 @@ export default {
         forceSave: false
       },
       detail: {},
-      editorConfig: {}
+      editorConfig: {},
+      // 需要互联网加载的url
+      fullUrl: "https://ideafusion.oss-accelerate.aliyuncs.com/dev/admin/sass/0.5971762278810782/2024226/%E4%BE%9B%E5%BA%94%E5%95%86%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5%E4%B8%89-888.docx"
     }
   },
   components: {
     OnlyofficeEditor
   },
-  created () {
+  created() {
     this.queryDocumentInfo()
   },
   methods: {
     // 获取文档配置信息
-    queryDocumentInfo () {
+    queryDocumentInfo() {
       this.loading.editor = true
-      queryDocumentInfo({ key: 'test4.docx', useJwtEncrypt: 'y' })
+      queryDocumentInfo({ key: 'test4.docx', useJwtEncrypt: 'y', fullUrl: this.fullUrl })
         .then(res => {
           const data = res.data || {}
           const { id, remarks } = data
@@ -44,12 +46,12 @@ export default {
         })
     },
     // 保存
-    onSave () {
+    onSave() {
       this.loading.forceSave = true
       const { key } = this.editorConfig.document
       const { id } = this.detail
       // 如果开启了 JWT 加密，useJwtEncrypt 字段要传递 y
-      forceSaveDocumentInfo({ id, key, useJwtEncrypt: 'n' })
+      forceSaveDocumentInfo({ id, key, useJwtEncrypt: 'y' })
         .then(res => {
           if (res.code === 0) {
             this.$message.success('保存成功')

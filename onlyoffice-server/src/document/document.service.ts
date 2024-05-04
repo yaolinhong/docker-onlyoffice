@@ -9,7 +9,7 @@ export class DocumentService {
   constructor(
     private readonly config: ConfigService,
     private onlyofficeService: OnlyofficeService,
-  ) {}
+  ) { }
 
   async forceSave(body: DocumentForceSaveDto): Promise<DocumentForceSave> {
     // 1、保存业务数据
@@ -29,14 +29,16 @@ export class DocumentService {
   }
 
   async documentInfo(query: DocumentInfoDto): Promise<DocumentInfo> {
+
     const editorConfig = this.onlyofficeService.editorDefaultConfig();
     // 添加文档
     editorConfig.document = {
       ...editorConfig.document,
       fileType: 'docx',
-      key: query.key,
-      url: `${this.config.get('domain')}/static/${query.key}`,
+      url: query.fullUrl ? query.fullUrl : `${this.config.get('domain')}/static/${query.key}`,
       title: '测试文档.docx',
+      // 客户端传过来的key
+      key: query.key,
     };
     // 添加用户信息
     editorConfig.editorConfig.user = {

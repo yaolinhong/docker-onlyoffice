@@ -66,15 +66,15 @@ export default {
           // 权限
           permissions: {
             // 启用评论
-            comment: true,
+            comment: false,
             // 启用下载
-            download: true,
+            download: false,
             // 启用编辑
-            edit: true,
+            edit: false,
             // 启用导出
-            print: true,
+            print: false,
             // 启用预览
-            review: true
+            review: false
           }
         },
         editorConfig: {
