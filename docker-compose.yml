@@ -6,8 +6,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - /app/mysql/sql:/app/sql
-      - /app/mysql/mysql_data:/var/lib/mysql
+      - ./app/mysql/sql:/app/sql
+      - ./app/mysql/mysql_data:/var/lib/mysql
       # - ./rdic.sql:/docker-entrypoint-initdb.d/init.sql
 
     environment:
@@ -39,5 +39,5 @@ services:
       - '8071:80'
       - '443:443'
     volumes:
-      - '/app/onlyoffice/Data:/var/www/onlyoffice/Data'
-      - '/app/onlyoffice/logs:/var/log/onlyoffice'
+      - './app/onlyoffice/Data:/var/www/onlyoffice/Data'
+      - './app/onlyoffice/logs:/var/log/onlyoffice'
